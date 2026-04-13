@@ -65,6 +65,10 @@ int main() {
                 trip.clear();
                 cout << "\nEmptied.\nSize: " << trip.size() << endl;
                 break;
+            case 5:
+                cout << "Filling Trip with Billies.\n";
+                fill(trip.begin(), trip.end(), Goat("Billy", 12, "Orange"));
+                break;
             default:
                 cout << "Invalid selection.\n";
                 break;
@@ -82,6 +86,7 @@ int main_menu() {
     cout << "[2] Delete a goat\n";
     cout << "[3] List goats\n";
     cout << "[4] Clear trip\n";
+    cout << "[5] Filling trip with Billies\n";
     cout << "[0] Quit\n";
     cout << "Choice --> ";
     int choice;
