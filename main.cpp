@@ -69,6 +69,11 @@ int main() {
                 cout << "Filling Trip with Billies.\n";
                 fill(trip.begin(), trip.end(), Goat("Billy", 12, "Orange"));
                 break;
+            case 6:
+                //doubling goat ages
+                cout << "Doubling ages of goats in trip.\n";
+                for_each(trip.begin(), trip.end(), [](Goat& g){g.set_age(g.get_age()*2);});
+                break;
             default:
                 cout << "Invalid selection.\n";
                 break;
@@ -86,7 +91,8 @@ int main_menu() {
     cout << "[2] Delete a goat\n";
     cout << "[3] List goats\n";
     cout << "[4] Clear trip\n";
-    cout << "[5] Filling trip with Billies\n";
+    cout << "[5] Replace every goat with Billy\n";
+    cout << "[6] Double age of every goat\n";
     cout << "[0] Quit\n";
     cout << "Choice --> ";
     int choice;
