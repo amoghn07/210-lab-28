@@ -80,12 +80,7 @@ int main() {
                 trip.reverse();
                 break;
             case 8:
-            {
-                auto newEnd = unique(trip.begin(), trip.end());
-                trip.erase(newEnd, trip.end());
-                cout << "Making trip unique.\n";
-                break;
-            }
+            
             default:
                 cout << "Invalid selection.\n";
                 break;
@@ -106,7 +101,7 @@ int main_menu() {
     cout << "[5] Replace every goat with Billy\n";
     cout << "[6] Double age of every goat\n";
     cout << "[7] Reverse trip order\n";
-    cout << "[8] Remove all non-unique goats.\n";
+    cout << "[8] .\n";
     cout << "[0] Quit\n";
     cout << "Choice --> ";
     int choice;
