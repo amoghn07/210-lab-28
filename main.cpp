@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <list>
 #include <algorithm>
+#include <iterator>
 #include "Goat.h"
 #include <random>
 using namespace std;
@@ -80,15 +81,30 @@ int main() {
                 trip.reverse();
                 break;
             case 8:
-            
+            {
+                list <Goat> trip2;
+                list <Goat> merged;
+                for (int i = 0; i < tripSize; i++) {
+                    age = rand() % MAX_AGE;  // defined in Goat.h
+                    name = names[rand() % SZ_NAMES];
+                    color = colors[rand() % SZ_COLORS];
+                    Goat tmp(name, age, color);
+                    trip2.push_back(tmp);
+                }
+                trip.sort();
+                trip2.sort();
+                merge(trip.begin(), trip.end(), trip2.begin(), trip2.end(), back_inserter(merged) );
+                //back inserter allows to append to end of list even though its empty. 
+                cout << "Merged goat lists:\n";
+                display_trip(merged);
+                break;
+            }
             default:
                 cout << "Invalid selection.\n";
                 break;
         }
         sel = main_menu();
     }
-    
-
     return 0;
 }
 
@@ -101,7 +117,7 @@ int main_menu() {
     cout << "[5] Replace every goat with Billy\n";
     cout << "[6] Double age of every goat\n";
     cout << "[7] Reverse trip order\n";
-    cout << "[8] .\n";
+    cout << "[8] Merge random goats to trip list\n";
     cout << "[0] Quit\n";
     cout << "Choice --> ";
     int choice;
