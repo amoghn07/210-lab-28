@@ -74,6 +74,10 @@ int main() {
                 cout << "Doubling ages of goats in trip.\n";
                 for_each(trip.begin(), trip.end(), [](Goat& g){g.set_age(g.get_age()*2);});
                 break;
+            case 7:
+                cout << "Reversing trip order.\n";
+                trip.reverse();
+                break;
             default:
                 cout << "Invalid selection.\n";
                 break;
@@ -93,11 +97,12 @@ int main_menu() {
     cout << "[4] Clear trip\n";
     cout << "[5] Replace every goat with Billy\n";
     cout << "[6] Double age of every goat\n";
+    cout << "[7] Reverse trip order\n";
     cout << "[0] Quit\n";
     cout << "Choice --> ";
     int choice;
     cin >> choice;
-    while (choice < 1 || choice > 12) {
+    while (choice < 0 || choice > 12) {
         cout << "Invalid, again --> ";
         cin >> choice;
     }
