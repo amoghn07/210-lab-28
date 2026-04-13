@@ -94,11 +94,15 @@ int main() {
                 trip.sort();
                 trip2.sort();
                 merge(trip.begin(), trip.end(), trip2.begin(), trip2.end(), back_inserter(merged) );
+                trip = merged;
                 //back inserter allows to append to end of list even though its empty. 
                 cout << "Merged goat lists:\n";
-                display_trip(merged);
+                display_trip(trip);
                 break;
             }
+            case 9:
+                cout << "Sorting.\n";
+                trip.sort();
             default:
                 cout << "Invalid selection.\n";
                 break;
@@ -118,6 +122,7 @@ int main_menu() {
     cout << "[6] Double age of every goat\n";
     cout << "[7] Reverse trip order\n";
     cout << "[8] Merge random goats to trip list\n";
+    cout << "[9] Sort trip\n";
     cout << "[0] Quit\n";
     cout << "Choice --> ";
     int choice;
